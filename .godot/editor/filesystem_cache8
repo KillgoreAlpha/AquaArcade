@@ -1,0 +1,36 @@
+cffcf7cc5eb03ca20a5c49cce30ef619
+::res://::1712437699
+event_template.gd::GDScript::-1::1712381472::0::1::::<>Node2D<>::
+event_template.tscn::PackedScene::901091943135154597::1712381472::0::1::::<><>::res://event_template.gd
+icon.svg::CompressedTexture2D::4004628138948996006::1712378320::1712378366::1::::<><>::
+main.gd::GDScript::-1::1712378320::0::1::::<>Node2D<>::
+main.tscn::PackedScene::105605559369491192::1712432132::0::1::::<><>::res://main.gd<>uid://20eaviirngd3::::res://resource_template.tscn<>uid://dlmt2s5cwx60g::::res://assets/models/world.glb<>uid://rmjawotqhg14::::res://assets/test sprite.aseprite<>uid://bbov27cwq68ug::::res://assets/sprites/robot.aseprite
+README.md::TextFile::-1::1712378320::0::1::::<><>::
+README.ru.md::TextFile::-1::1712380476::0::1::::<><>::
+resource_template.gd::GDScript::-1::1712378320::0::1::::<>Node2D<>::
+resource_template.tscn::PackedScene::1946952205784942098::1712378320::0::1::::<><>::res://resource_template.gd
+::res://addons/::1712433058
+::res://addons/nklbdev.aseprite_importers/::1712433010
+aseprite_image_format_loader_extension.gd::GDScript::-1::1712433010::0::1::::<>ImageFormatLoaderExtension<>::
+common.gd::GDScript::-1::1712433010::0::1::::<>Object<>::
+editor_plugin.gd::GDScript::-1::1712433010::0::1::::<>EditorPlugin<>::
+icon.png::CompressedTexture2D::2503417493381309461::1712433010::1712433010::1::::<><>::
+plugin.cfg::TextFile::-1::1712433010::0::1::::<><>::
+::res://addons/nklbdev.aseprite_importers/editor_import_plugins/::1712433010
+animated_sprite_2d.gd::GDScript::-1::1712433010::0::1::::<><>::
+animated_sprite_3d.gd::GDScript::-1::1712433010::0::1::::<><>::
+sprite_2d.gd::GDScript::-1::1712433010::0::1::::<><>::
+sprite_3d.gd::GDScript::-1::1712433010::0::1::::<><>::
+sprite_frames.gd::GDScript::-1::1712433010::0::1::::<><>::
+texture_rect.gd::GDScript::-1::1712433010::0::1::::<><>::
+_animation_importer_base.gd::GDScript::-1::1712433010::0::1::::<><>::
+_importer_base.gd::GDScript::-1::1712433010::0::1::::<>EditorImportPlugin<>::
+::res://assets/::1712432046
+test sprite.aseprite::CompressedTexture2D::1218530505856068417::1712380272::1712432046::1::::<><>::
+::res://assets/models/::1712431988
+D6.glb::PackedScene::6330959378682476771::1712379362::1712431986::1::::<><>::
+world.glb::PackedScene::7957314695330017708::1712379386::1712431988::1::::<><>::
+::res://assets/sounds/::1712379446
+::res://assets/sprites/::1712432046
+factories.aseprite::CompressedTexture2D::4503440565624484636::1712395042::1712432046::1::::<><>::
+robot.aseprite::CompressedTexture2D::2486835774030529642::1712392112::1712432046::1::::<><>::

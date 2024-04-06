@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://brfkqg5dbsuq"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_8spcv"]
+[ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://resource_template.tscn" id="2_t8dhn"]
+[ext_resource type="PackedScene" uid="uid://dlmt2s5cwx60g" path="res://assets/models/world.glb" id="3_ptu25"]
+[ext_resource type="Texture2D" uid="uid://rmjawotqhg14" path="res://assets/test sprite.aseprite" id="4_53f24"]
+[ext_resource type="Texture2D" uid="uid://bbov27cwq68ug" path="res://assets/sprites/robot.aseprite" id="5_t3hvt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2ovb"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8spcv")
+
+[node name="Resource Template" parent="." instance=ExtResource("2_t8dhn")]
+
+[node name="WorldSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l2ovb")
+
+[node name="world" parent="." instance=ExtResource("3_ptu25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0849427, 0.0703487, -0.168863)
+
+[node name="TestSprite" type="Sprite2D" parent="."]
+position = Vector2(567, 249)
+texture = ExtResource("4_53f24")
+
+[node name="Robot" type="Sprite2D" parent="."]
+position = Vector2(819, 355)
+texture = ExtResource("5_t3hvt")
