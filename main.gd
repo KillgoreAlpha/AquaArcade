@@ -72,6 +72,11 @@ func _process(delta):
 	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid/MetalLabel.text = str(metal)
 	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid/AmpearLabel.text = str(ampears)
 	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid/BotsLabel.text = str(bots)
+	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid.tooltip_text = "Productivity: " + str(productivity*100)  + "%"
+	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/WaterUIGrid.tooltip_text = "Pollution: " + str(pollution*100)  + "%\n" + "Water Quality: " + str(water_quality*100)  + "%" 
+	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MountainUIGrid.tooltip_text = "Snow Pack: " + str(productivity*100)  + "%"
+	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid.tooltip_text = "Ampear Groves: " + str(ampear_groves)  + "\n" + "Ampear Quality: " + str(ampear_quality*100)  + "%"
+	$CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid.tooltip_text = "Metal Left: " + str(mountain)
 	match season:
 		0:
 			$CanvasLayer/TopBar/DateContainer/MarginContainer/CurrentTime.text = "Summer, Year " + str(year)
