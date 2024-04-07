@@ -5,19 +5,23 @@ extends CenterContainer
 func _ready():
 	hide()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 
 func _on_choice_1_pressed():
-	pass # Replace with function body.
+	
+	$".".hide()
+	$"../Event".show()
 
 
 func _on_choice_2_pressed():
-	pass # Replace with function body.
 
+	$".".hide()
+	$"../Event".show()
 
 func _on_choice_3_pressed():
-	pass # Replace with function body.
+
+	$".".hide()
+	$"../Event".show()

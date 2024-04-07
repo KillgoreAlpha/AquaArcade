@@ -117,7 +117,6 @@ texture = ExtResource("9_2upii")
 stream = ExtResource("10_cghmq")
 
 [node name="ClockBell" type="AudioStreamPlayer2D" parent="CanvasLayer/TopBar/ClockContainer/Clock"]
-position = Vector2(131, -59)
 stream = ExtResource("11_iqeyi")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/TopBar/ClockContainer"]
@@ -304,17 +303,6 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("16_uemgx")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Choices/Card Select/CenterContainer/Card1/CardBackground1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("6_jiuxe")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Growth/Conservation Protocols"
-
 [node name="Choice1" type="TextureButton" parent="CanvasLayer/Choices/Card Select/CenterContainer/Card1"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -422,58 +410,46 @@ texture = ExtResource("18_l4w5x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Event/EventBackground"]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 65.0
-offset_right = 1215.0
+offset_right = 917.0
 offset_bottom = 425.0
 
-[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/Event/EventBackground"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -204.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/Event/EventBackground"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 448.0
+offset_right = 1269.0
+offset_bottom = 683.0
+theme_override_constants/separation = 20
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Event/EventBackground/HFlowContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Event/EventBackground/VSplitContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="TextureButton1" type="TextureButton" parent="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer"]
+[node name="TextureButton1" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
-stretch_mode = 0
 
-[node name="ChoiceText1" type="RichTextLabel" parent="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer/TextureButton1"]
+[node name="ChoiceText1" type="RichTextLabel" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer/TextureButton1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.98
-offset_left = 3.0
-offset_right = -1.0
+offset_right = 1.0
 
-[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/Event/EventBackground/HFlowContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/Event/EventBackground/VSplitContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer2"]
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2"]
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
 
-[node name="ChoiceText2" type="RichTextLabel" parent="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer2/TextureButton2"]
+[node name="ChoiceText2" type="RichTextLabel" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2/TextureButton2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.97
-offset_left = 239.0
-offset_top = 296.0
-offset_right = 239.0
-offset_bottom = 296.0
 
 [node name="EventList" parent="CanvasLayer/Event" instance=ExtResource("25_mgud6")]
 
@@ -498,5 +474,5 @@ autoplay = "default"
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer/Card1/Choice1" to="CanvasLayer/Choices" method="_on_choice_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer2/Card2/Choice2" to="CanvasLayer/Choices" method="_on_choice_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer3/Card3/Choice3" to="CanvasLayer/Choices" method="_on_choice_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer/TextureButton1" to="CanvasLayer/Event" method="_on_texture_button_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/Event/EventBackground/HFlowContainer/CenterContainer2/TextureButton2" to="CanvasLayer/Event" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer/TextureButton1" to="CanvasLayer/Event" method="_on_texture_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2/TextureButton2" to="CanvasLayer/Event" method="_on_texture_button_2_pressed"]
