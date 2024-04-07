@@ -1,18 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://20eaviirngd3"]
+[gd_scene load_steps=2 format=3 uid="uid://20eaviirngd3"]
 
 [ext_resource type="Script" path="res://resource_template.gd" id="1_gf626"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gvlyl"]
-
 [node name="Resource Template" type="Node2D"]
 script = ExtResource("1_gf626")
-
-[node name="MapSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_gvlyl")
-
-[node name="Control" type="Control" parent="MapSprite"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 71.0
-offset_bottom = 72.0
-tooltip_text = "This is a Tooltip"
