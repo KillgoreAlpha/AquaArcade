@@ -396,7 +396,7 @@ theme_override_constants/separation = 20
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Event/EventBackground/VSplitContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer"]
+[node name="TextureButton1" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
@@ -405,7 +405,7 @@ texture_normal = ExtResource("19_5ftf1")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2"]
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2"]
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
@@ -451,4 +451,6 @@ autoplay = "default"
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer/Card1/Choice1" to="CanvasLayer/Choices" method="_on_choice_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer2/Card2/Choice2" to="CanvasLayer/Choices" method="_on_choice_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer3/Card3/Choice3" to="CanvasLayer/Choices" method="_on_choice_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer/TextureButton1" to="CanvasLayer/Event" method="_on_texture_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2/TextureButton2" to="CanvasLayer/Event" method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
