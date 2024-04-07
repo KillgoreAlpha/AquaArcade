@@ -62,6 +62,8 @@ var clockfall = preload("res://assets/icons/clockfall.png")
 var clockwinter = preload("res://assets/icons/clockwinter.png")
 var clockspring = preload("res://assets/icons/clockspring.png")
 
+var event = preload("res://Event.gd")
+
 func _process(delta):
 	season = time % 4
 	year = time / 4
@@ -106,5 +108,8 @@ func _on_end_turn_pressed():
 	win_progress += ((bots * productivity)/difficulty) + winmod
 	if season == 3:
 		$CanvasLayer/TopBar/ClockContainer/Clock/ClockBell.play()
+		$CanvasLayer/Choices.show()
 	else:
 		$CanvasLayer/TopBar/ClockContainer/Clock/ClockTick.play()
+		
+	
