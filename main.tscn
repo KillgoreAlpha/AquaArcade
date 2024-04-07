@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://brfkqg5dbsuq"]
+[gd_scene load_steps=7 format=3 uid="uid://brfkqg5dbsuq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8spcv"]
 [ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://resource_template.tscn" id="2_t8dhn"]
 [ext_resource type="Texture2D" uid="uid://cb0sqq3e85u0q" path="res://assets/sprites/test sprite.aseprite" id="4_8udjc"]
 [ext_resource type="PackedScene" uid="uid://ccn33bgi1kcco" path="res://assets/models/world river.glb" id="4_lrj47"]
+[ext_resource type="Theme" uid="uid://bvuglxq615n6e" path="res://text.tres" id="5_2826s"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b1rt8"]
 
@@ -35,58 +36,58 @@ scale = Vector2(6.23437, 6.10938)
 texture = ExtResource("4_8udjc")
 
 [node name="WaterIcon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1557, 36)
-scale = Vector2(50, 50)
+position = Vector2(1557, 31.5)
+scale = Vector2(50, 49)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="AmpearIcon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1626, 36)
+position = Vector2(1626, 31)
 scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="MetalIcon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1695, 36)
+position = Vector2(1695, 31)
 scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="BotsIcon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1764, 36)
+position = Vector2(1764, 31)
 scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="MountainIcon" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1833, 36)
+position = Vector2(1833, 31)
 scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="WaterTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1557, 80.5)
-scale = Vector2(50, 23)
+position = Vector2(1557, 86)
+scale = Vector2(50, 38)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="AmpearTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1626, 80.375)
+position = Vector2(1626, 78.375)
 scale = Vector2(50, 22.75)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="MetalTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1696, 80.375)
+position = Vector2(1696, 78.375)
 scale = Vector2(50, 22.75)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="BotsTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1764, 80.375)
-scale = Vector2(50, 22.75)
+position = Vector2(1764, 87)
+scale = Vector2(50, 40)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="MountainTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1833, 80.375)
+position = Vector2(1833, 78.375)
 scale = Vector2(50, 22.75)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="CurrentEventTracker" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(622.5, 57.0625)
-scale = Vector2(433, 68.125)
+position = Vector2(627, 57.0625)
+scale = Vector2(442, 68.125)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
 [node name="PolicyTracker" type="Sprite2D" parent="CanvasLayer"]
@@ -109,20 +110,42 @@ position = Vector2(338, 56)
 scale = Vector2(64, 64)
 texture = SubResource("PlaceholderTexture2D_b1rt8")
 
+[node name="ProgressTracker" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1300.5, 54)
+scale = Vector2(429, 68.125)
+texture = SubResource("PlaceholderTexture2D_b1rt8")
+
 [node name="WaterLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.798
+anchor_left = 0.79175
 anchor_top = 0.064
-anchor_right = 0.824
-anchor_bottom = 0.085
-offset_left = 10.84
-offset_top = -0.120003
-offset_right = -11.0801
-offset_bottom = 0.199997
+anchor_right = 0.822958
+anchor_bottom = 0.0794444
+offset_left = 17.8401
+offset_top = 0.879997
+offset_right = -1.07996
+offset_bottom = 1.2
 grow_horizontal = 2
 grow_vertical = 2
-text = "100"
-horizontal_alignment = 1
+theme = ExtResource("5_2826s")
+text = "100%"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WaterLabel2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.79175
+anchor_top = 0.064
+anchor_right = 0.822958
+anchor_bottom = 0.0794444
+offset_left = 17.8401
+offset_top = 18.88
+offset_right = -1.07996
+offset_bottom = 19.2
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_2826s")
+text = "100%"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -136,6 +159,7 @@ offset_left = 10.7198
 offset_top = -0.120003
 offset_right = -10.2001
 offset_bottom = 0.199997
+theme = ExtResource("5_2826s")
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -151,12 +175,13 @@ offset_left = 10.5999
 offset_top = -0.120003
 offset_right = -11.3201
 offset_bottom = 0.199997
+theme = ExtResource("5_2826s")
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MetalLabel2" type="Label" parent="CanvasLayer"]
+[node name="MountainLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.942
 anchor_top = 0.064
@@ -166,22 +191,37 @@ offset_left = 10.36
 offset_top = -0.120003
 offset_right = -11.5601
 offset_bottom = 0.199997
+theme = ExtResource("5_2826s")
 text = "100"
-horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BotsLabel2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.906
+anchor_top = 0.083
+anchor_right = 0.931
+anchor_bottom = 0.099
+offset_left = 5.47998
+offset_top = 1.35999
+offset_right = -1.52014
+offset_bottom = 1.07999
+theme = ExtResource("5_2826s")
+text = "100%"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BotsLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.906
-anchor_top = 0.064
+anchor_top = 0.063
 anchor_right = 0.932
-anchor_bottom = 0.085
-offset_left = 10.48
-offset_top = -0.120003
-offset_right = -11.4401
-offset_bottom = 0.199997
+anchor_bottom = 0.0810741
+offset_left = 9.47998
+offset_top = 2.96
+offset_right = -9.44006
+offset_bottom = 0.439987
+theme = ExtResource("5_2826s")
 text = "100"
-horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
