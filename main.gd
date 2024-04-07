@@ -75,16 +75,16 @@ func _process(delta):
 	match season:
 		0:
 			$CanvasLayer/TopBar/DateContainer/MarginContainer/CurrentTime.text = "Summer, Year " + str(year)
-			$CanvasLayer/TopBar/Clock.texture = clocksummer
+			$CanvasLayer/TopBar/ClockContainer/Clock.texture = clocksummer
 		1:
 			$CanvasLayer/TopBar/DateContainer/MarginContainer/CurrentTime.text = "Fall, Year " + str(year)
-			$CanvasLayer/TopBar/Clock.texture = clockfall
+			$CanvasLayer/TopBar/ClockContainer/Clock.texture = clockfall
 		2:
 			$CanvasLayer/TopBar/DateContainer/MarginContainer/CurrentTime.text = "Winter, Year " + str(year)
-			$CanvasLayer/TopBar/Clock.texture = clockwinter
+			$CanvasLayer/TopBar/ClockContainer/Clock.texture = clockwinter
 		3:
 			$CanvasLayer/TopBar/DateContainer/MarginContainer/CurrentTime.text = "Spring, Year " + str(year)
-			$CanvasLayer/TopBar/Clock.texture = clockspring
+			$CanvasLayer/TopBar/ClockContainer/Clock.texture = clockspring
 
 func _on_end_turn_pressed():
 	time += 1
@@ -98,6 +98,6 @@ func _on_end_turn_pressed():
 	difficulty += windiffmod
 	win_progress += ((bots * productivity)/difficulty) + winmod
 	if season == 3:
-		$CanvasLayer/TopBar/Clock/ClockBell.play()
+		$CanvasLayer/TopBar/ClockContainer/Clock/ClockBell.play()
 	else:
-		$CanvasLayer/TopBar/Clock/ClockTick.play()
+		$CanvasLayer/TopBar/ClockContainer/Clock/ClockTick.play()

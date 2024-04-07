@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brfkqg5dbsuq"]
+[gd_scene load_steps=27 format=3 uid="uid://brfkqg5dbsuq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8spcv"]
 [ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://event_manager.tscn" id="2_t8dhn"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c3bipqa1qhhba" path="res://assets/icons/mountain.aseprite" id="9_85j7y"]
 [ext_resource type="AudioStream" uid="uid://brlojqwk53wv6" path="res://assets/sounds/clock-tick.mp3" id="10_cghmq"]
 [ext_resource type="AudioStream" uid="uid://cdvrfx4fc35oe" path="res://assets/sounds/darkbell.mp3" id="11_iqeyi"]
+[ext_resource type="Texture2D" uid="uid://cuak8ouf4cyde" path="res://assets/icons/nextturn.png" id="12_nksn0"]
 [ext_resource type="PackedScene" uid="uid://b3bdwxvpmu30l" path="res://assets/sprites/robot.aseprite" id="16_athk3"]
 [ext_resource type="Texture2D" uid="uid://bgx1p1wsf60pu" path="res://assets/icons/card.aseprite" id="16_uemgx"]
 [ext_resource type="Texture2D" uid="uid://ddh468aclaaui" path="res://assets/icons/choosebutton.aseprite" id="17_r6388"]
@@ -32,6 +33,7 @@ bg_color = Color(0, 0.631373, 0.976471, 1)
 script = ExtResource("1_8spcv")
 
 [node name="Event Manager" parent="." instance=ExtResource("2_t8dhn")]
+visible = false
 
 [node name="world river" parent="." instance=ExtResource("4_lrj47")]
 
@@ -103,15 +105,40 @@ layout_mode = 2
 theme = ExtResource("6_jiuxe")
 fit_content = true
 
-[node name="Clock" type="TextureRect" parent="CanvasLayer/TopBar"]
+[node name="ClockContainer" type="VSplitContainer" parent="CanvasLayer/TopBar"]
+layout_mode = 2
+
+[node name="Clock" type="TextureRect" parent="CanvasLayer/TopBar/ClockContainer"]
 layout_mode = 2
 texture = ExtResource("9_2upii")
 
-[node name="ClockTick" type="AudioStreamPlayer" parent="CanvasLayer/TopBar/Clock"]
+[node name="ClockTick" type="AudioStreamPlayer" parent="CanvasLayer/TopBar/ClockContainer/Clock"]
 stream = ExtResource("10_cghmq")
 
-[node name="ClockBell" type="AudioStreamPlayer2D" parent="CanvasLayer/TopBar/Clock"]
+[node name="ClockBell" type="AudioStreamPlayer2D" parent="CanvasLayer/TopBar/ClockContainer/Clock"]
 stream = ExtResource("11_iqeyi")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TopBar/ClockContainer"]
+layout_mode = 2
+texture = ExtResource("12_nksn0")
+
+[node name="EndTurn" type="Button" parent="CanvasLayer/TopBar/ClockContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/TopBar/ClockContainer/TextureRect/EndTurn"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 65.0
+theme = ExtResource("6_jiuxe")
+theme_override_font_sizes/font_size = 44
+text = "End Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WinProgress" type="PanelContainer" parent="CanvasLayer/TopBar"]
 layout_mode = 2
@@ -362,6 +389,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Event" type="CenterContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -411,34 +439,12 @@ size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
 
 [node name="MainMenu" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="EndTurn" type="Button" parent="."]
-offset_left = 827.0
-offset_top = 257.0
-offset_right = 1045.0
-offset_bottom = 328.0
-
-[node name="Label" type="Label" parent="EndTurn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("6_jiuxe")
-theme_override_font_sizes/font_size = 44
-text = "End Turn"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="robot" parent="." instance=ExtResource("16_athk3")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.487064, 1.168, 0.763777)
@@ -448,9 +454,9 @@ autoplay = "default"
 transform = Transform3D(0.05, 0, 0, 0, 0.0496951, 0.0055136, 0, -0.0055136, 0.0496951, 0.572062, 1.172, 0.886256)
 autoplay = "default"
 
+[connection signal="pressed" from="CanvasLayer/TopBar/ClockContainer/TextureRect/EndTurn" to="." method="_on_end_turn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer/Card1/Choice1" to="CanvasLayer/Choices" method="_on_choice_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer2/Card2/Choice2" to="CanvasLayer/Choices" method="_on_choice_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer3/Card3/Choice3" to="CanvasLayer/Choices" method="_on_choice_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer/TextureButton1" to="CanvasLayer/Event" method="_on_texture_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Event/EventBackground/VSplitContainer/CenterContainer2/TextureButton2" to="CanvasLayer/Event" method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
