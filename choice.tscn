@@ -273,6 +273,7 @@ size_flags_horizontal = 6
 texture_normal = ExtResource("17_qvds4")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer/Card Select/CenterContainer/Card1/TextureButton"]
+layout_mode = 0
 offset_right = 240.0
 offset_bottom = 100.0
 
@@ -304,6 +305,7 @@ size_flags_horizontal = 6
 texture_normal = ExtResource("17_qvds4")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer/Card Select/CenterContainer2/Card2/TextureButton"]
+layout_mode = 0
 offset_right = 241.0
 offset_bottom = 100.0
 

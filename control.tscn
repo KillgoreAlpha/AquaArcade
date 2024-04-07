@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1c3t5t0o4tjl"]
+
+[ext_resource type="Texture2D" uid="uid://bgx1p1wsf60pu" path="res://assets/icons/card.aseprite" id="1_00j0d"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_00j0d")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
