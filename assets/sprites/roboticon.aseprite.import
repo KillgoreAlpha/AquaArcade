@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfsemyxtipcb5"
-path="res://.godot/imported/water.png-9a8cdf04c6cafe0272a141fa8ccf4f46.ctex"
+uid="uid://duakl2jtj2xoc"
+path="res://.godot/imported/roboticon.aseprite-9894f9df32a28ee8bb8f96d286d505ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/water.png"
-dest_files=["res://.godot/imported/water.png-9a8cdf04c6cafe0272a141fa8ccf4f46.ctex"]
+source_file="res://assets/sprites/roboticon.aseprite"
+dest_files=["res://.godot/imported/roboticon.aseprite-9894f9df32a28ee8bb8f96d286d505ce.ctex"]
 
 [params]
 

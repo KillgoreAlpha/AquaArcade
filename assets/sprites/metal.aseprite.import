@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfsemyxtipcb5"
-path="res://.godot/imported/water.png-9a8cdf04c6cafe0272a141fa8ccf4f46.ctex"
+uid="uid://cyoai8edosgmw"
+path="res://.godot/imported/metal.aseprite-4046b61f874cab72d375feecba6aa496.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/water.png"
-dest_files=["res://.godot/imported/water.png-9a8cdf04c6cafe0272a141fa8ccf4f46.ctex"]
+source_file="res://assets/sprites/metal.aseprite"
+dest_files=["res://.godot/imported/metal.aseprite-4046b61f874cab72d375feecba6aa496.ctex"]
 
 [params]
 
