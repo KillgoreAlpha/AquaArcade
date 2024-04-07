@@ -63,9 +63,6 @@ var clockspring = preload("res://assets/icons/clockspring.png")
 func _process(delta):
 	season = time % 4
 	year = time / 4
-	difficulty += windiffmod
-	water += watermod
-	pollution += pollutionmod
 	water_quality = ((water - (water * pollution)) / water) + waterqualmod
 	ampear_quality = water_quality + ampearqualmod
 	productivity = (ampear_quality + water_quality) / 2 + prodmod
@@ -91,10 +88,14 @@ func _process(delta):
 
 func _on_end_turn_pressed():
 	time += 1
+	pollution += pollutionmod
+	ampear_groves += grovemod
 	bots += botsmod
+	water += watermod
 	mountain -= (bots * productivity) + mountainmod
 	ampears_produced = (bots * productivity) * ampear_groves + ampearprodmod
 	ampears +=  ampears_produced - bots + ampearmod
+	difficulty += windiffmod
 	win_progress += ((bots * productivity)/difficulty) + winmod
 	if season == 3:
 		$CanvasLayer/TopBar/Clock/ClockBell.play()
