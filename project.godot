@@ -27,3 +27,7 @@ window/size/viewport_height=1080
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
+
+[filesystem]
+
+import/fbx/enabled=false
