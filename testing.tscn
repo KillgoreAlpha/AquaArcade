@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ufcupvphst1f"]
+
+[ext_resource type="Texture2D" uid="uid://cuah4f4tn7tmf" path="res://assets/sprites/ampearfield.aseprite" id="1_bkh45"]
+[ext_resource type="Texture2D" uid="uid://c3s8ypjc6k1va" path="res://assets/sprites/factories.aseprite" id="2_pwfi2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ampearfield" type="Sprite2D" parent="."]
+position = Vector2(829, 614.5)
+scale = Vector2(1.32813, 1.215)
+texture = ExtResource("1_bkh45")
+
+[node name="Factories" type="Sprite2D" parent="."]
+position = Vector2(1191, 589)
+texture = ExtResource("2_pwfi2")

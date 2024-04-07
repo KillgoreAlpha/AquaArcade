@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3s8ypjc6k1va"
-path="res://.godot/imported/factories.aseprite-64e27d090bb2e8595ccb1d98b333e17c.ctex"
+uid="uid://cuah4f4tn7tmf"
+path.s3tc="res://.godot/imported/ampearfield.aseprite-795b4da8e93af6c7e3f70099f5be79db.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/sprites/factories.aseprite"
-dest_files=["res://.godot/imported/factories.aseprite-64e27d090bb2e8595ccb1d98b333e17c.ctex"]
+source_file="res://assets/sprites/ampearfield.aseprite"
+dest_files=["res://.godot/imported/ampearfield.aseprite-795b4da8e93af6c7e3f70099f5be79db.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
