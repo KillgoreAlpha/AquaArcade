@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://brfkqg5dbsuq"]
+[gd_scene load_steps=24 format=3 uid="uid://brfkqg5dbsuq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8spcv"]
 [ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://event_manager.tscn" id="2_t8dhn"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://kdaprjxsevtm" path="res://assets/icons/event2.aseprite" id="7_qbejk"]
 [ext_resource type="Texture2D" uid="uid://bk4tp60qfkfxn" path="res://assets/icons/event3.aseprite" id="8_4nqm6"]
 [ext_resource type="Texture2D" uid="uid://cyoai8edosgmw" path="res://assets/icons/metal.aseprite" id="8_8425l"]
-[ext_resource type="Texture2D" uid="uid://c1noamuuutq6a" path="res://assets/icons/clock.aseprite" id="8_o5hka"]
+[ext_resource type="Texture2D" uid="uid://dnf8qtdtaodk6" path="res://assets/icons/clocksummer.png" id="9_2upii"]
 [ext_resource type="Texture2D" uid="uid://c3bipqa1qhhba" path="res://assets/icons/mountain.aseprite" id="9_85j7y"]
+[ext_resource type="AudioStream" uid="uid://brlojqwk53wv6" path="res://assets/sounds/clock-tick.mp3" id="10_cghmq"]
+[ext_resource type="AudioStream" uid="uid://cdvrfx4fc35oe" path="res://assets/sounds/darkbell.mp3" id="11_iqeyi"]
 [ext_resource type="PackedScene" uid="uid://b3bdwxvpmu30l" path="res://assets/sprites/robot.aseprite" id="16_athk3"]
 [ext_resource type="Texture2D" uid="uid://bgx1p1wsf60pu" path="res://assets/icons/card.aseprite" id="16_uemgx"]
 [ext_resource type="Texture2D" uid="uid://ddh468aclaaui" path="res://assets/icons/choosebutton.aseprite" id="17_r6388"]
@@ -52,6 +54,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("6_jiuxe")
 
 [node name="ChoicesContainer" type="PanelContainer" parent="CanvasLayer/TopBar"]
 layout_mode = 2
@@ -84,36 +87,40 @@ texture = ExtResource("7_qbejk")
 layout_mode = 2
 texture = ExtResource("8_4nqm6")
 
-[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/TopBar"]
+[node name="DateContainer" type="PanelContainer" parent="CanvasLayer/TopBar"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("6_jiuxe")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/DateContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TopBar/PanelContainer2/MarginContainer"]
+[node name="CurrentTime" type="RichTextLabel" parent="CanvasLayer/TopBar/DateContainer/MarginContainer"]
 layout_mode = 2
-text = "Lorem ipsum dolor sit amet"
+theme = ExtResource("6_jiuxe")
 fit_content = true
-scroll_following = true
 
 [node name="Clock" type="TextureRect" parent="CanvasLayer/TopBar"]
 layout_mode = 2
-texture = ExtResource("8_o5hka")
+texture = ExtResource("9_2upii")
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/TopBar"]
+[node name="ClockTick" type="AudioStreamPlayer" parent="CanvasLayer/TopBar/Clock"]
+stream = ExtResource("10_cghmq")
+
+[node name="ClockBell" type="AudioStreamPlayer2D" parent="CanvasLayer/TopBar/Clock"]
+stream = ExtResource("11_iqeyi")
+
+[node name="WinProgress" type="PanelContainer" parent="CanvasLayer/TopBar"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/WinProgress"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 15
@@ -121,123 +128,119 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/TopBar/PanelContainer/MarginContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/TopBar/WinProgress/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("6_jiuxe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ggkm3")
+step = 0.1
 rounded = true
 
-[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/TopBar"]
+[node name="ResourceTracker" type="VFlowContainer" parent="CanvasLayer/TopBar"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("6_jiuxe")
 
-[node name="ResourceContainer" type="PanelContainer" parent="CanvasLayer/TopBar/VFlowContainer"]
+[node name="ResourceContainer" type="PanelContainer" parent="CanvasLayer/TopBar/ResourceTracker"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer"]
+[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 0
 
-[node name="BotsUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer"]
+[node name="BotsUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/v_separation = 0
 
-[node name="BotsIcon" type="TextureRect" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid"]
+[node name="BotsIcon" type="TextureRect" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid"]
 layout_mode = 2
 texture = ExtResource("6_uyteo")
 stretch_mode = 3
 
-[node name="BotsLabel" type="Label" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid"]
+[node name="BotsLabel" type="Label" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/BotsUIGrid"]
 layout_mode = 2
 theme = ExtResource("5_2826s")
-text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="WaterUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer"]
+[node name="WaterUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/v_separation = 0
 
-[node name="WaterIcon" type="TextureRect" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/WaterUIGrid"]
+[node name="WaterIcon" type="TextureRect" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/WaterUIGrid"]
 layout_mode = 2
 texture = ExtResource("4_22p4l")
 stretch_mode = 3
 
-[node name="PollutionLabel" type="Label" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/WaterUIGrid"]
+[node name="WaterLabel" type="Label" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/WaterUIGrid"]
 layout_mode = 2
 theme = ExtResource("5_2826s")
-text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AmpearUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer"]
+[node name="MountainUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/v_separation = 0
 
-[node name="AmpearIcon" type="TextureRect" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid"]
-layout_mode = 2
-texture = ExtResource("6_p7lf3")
-
-[node name="AmpearLabel" type="Label" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid"]
-layout_mode = 2
-theme = ExtResource("5_2826s")
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="MetalUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/v_separation = 0
-
-[node name="MetalIcon" type="TextureRect" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid"]
-layout_mode = 2
-texture = ExtResource("8_8425l")
-
-[node name="MetalLabel" type="Label" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid"]
-layout_mode = 2
-theme = ExtResource("5_2826s")
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="MountainUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/v_separation = 0
-
-[node name="MountainIcon" type="TextureRect" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/MountainUIGrid"]
+[node name="MountainIcon" type="TextureRect" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MountainUIGrid"]
 layout_mode = 2
 texture = ExtResource("9_85j7y")
 
-[node name="MountainLabel" type="Label" parent="CanvasLayer/TopBar/VFlowContainer/ResourceContainer/MarginContainer/VFlowContainer/MountainUIGrid"]
+[node name="MountainLabel" type="Label" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MountainUIGrid"]
 layout_mode = 2
 theme = ExtResource("5_2826s")
-text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AmpearUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 0
+
+[node name="AmpearIcon" type="TextureRect" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid"]
+layout_mode = 2
+texture = ExtResource("6_p7lf3")
+
+[node name="AmpearLabel" type="Label" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/AmpearUIGrid"]
+layout_mode = 2
+theme = ExtResource("5_2826s")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MetalUIGrid" type="GridContainer" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 0
+
+[node name="MetalIcon" type="TextureRect" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid"]
+layout_mode = 2
+texture = ExtResource("8_8425l")
+
+[node name="MetalLabel" type="Label" parent="CanvasLayer/TopBar/ResourceTracker/ResourceContainer/MarginContainer/VFlowContainer/MetalUIGrid"]
+layout_mode = 2
+theme = ExtResource("5_2826s")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -408,6 +411,29 @@ layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
 
+[node name="EndTurn" type="Button" parent="."]
+offset_left = 827.0
+offset_top = 257.0
+offset_right = 1045.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="EndTurn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_jiuxe")
+theme_override_font_sizes/font_size = 44
+text = "End Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="robot" parent="." instance=ExtResource("16_athk3")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.487064, 1.168, 0.763777)
 autoplay = "default"
@@ -415,3 +441,5 @@ autoplay = "default"
 [node name="robot1" parent="." instance=ExtResource("16_athk3")]
 transform = Transform3D(0.05, 0, 0, 0, 0.0496951, 0.0055136, 0, -0.0055136, 0.0496951, 0.572062, 1.172, 0.886256)
 autoplay = "default"
+
+[connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
