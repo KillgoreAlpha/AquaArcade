@@ -27,7 +27,7 @@ bg_color = Color(0, 0.631373, 0.976471, 1)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8spcv")
 
-[node name="Resource Template" parent="." instance=ExtResource("2_t8dhn")]
+[node name="Event Manager" parent="." instance=ExtResource("2_t8dhn")]
 
 [node name="world river" parent="." instance=ExtResource("4_lrj47")]
 

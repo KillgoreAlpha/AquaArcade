@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [aseprite_importers]
 
-aseprite_executable_path="C:/Program Files (x86)/Steam/steamapps/common/Aseprite/Aseprite.exe"
+aseprite_executable_path="D:/Downloads/_Getintopc.com_Aseprite_v1_2_21/Aseprite_v1_2_21/Aseprite/aseprite.exe"
 
 [display]
 
