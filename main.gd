@@ -54,6 +54,8 @@ var grovemod = 0
 var botsmod = 0
 # Productivity Modifier
 var prodmod = 0
+# 
+var possibilities
 
 var clocksummer = preload("res://assets/icons/clocksummer.png")
 var clockfall = preload("res://assets/icons/clockfall.png")

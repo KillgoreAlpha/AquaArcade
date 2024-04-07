@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://brfkqg5dbsuq"]
+[gd_scene load_steps=28 format=3 uid="uid://brfkqg5dbsuq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8spcv"]
 [ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://event_manager.tscn" id="2_t8dhn"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://rxe5cdgh6cmq" path="res://assets/icons/eventcard.aseprite" id="18_l4w5x"]
 [ext_resource type="Texture2D" uid="uid://md4cga14rla6" path="res://assets/icons/eventbutton.aseprite" id="19_5ftf1"]
 [ext_resource type="Script" path="res://Event.gd" id="21_nv6un"]
+[ext_resource type="PackedScene" uid="uid://dmk2tcayidycp" path="res://event_list.tscn" id="25_mgud6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggkm3"]
 bg_color = Color(0, 0.631373, 0.976471, 1)
@@ -438,6 +439,8 @@ layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
 
+[node name="EventList" parent="CanvasLayer/Event" instance=ExtResource("25_mgud6")]
+
 [node name="MainMenu" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = 15
@@ -455,6 +458,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.0496951, 0.0055136, 0, -0.0055136, 0.04
 autoplay = "default"
 
 [connection signal="pressed" from="CanvasLayer/TopBar/ClockContainer/TextureRect/EndTurn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="CanvasLayer/TopBar/ClockContainer/TextureRect/EndTurn" to="CanvasLayer/Event" method="_on_end_turn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer/Card1/Choice1" to="CanvasLayer/Choices" method="_on_choice_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer2/Card2/Choice2" to="CanvasLayer/Choices" method="_on_choice_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choices/Card Select/CenterContainer3/Card3/Choice3" to="CanvasLayer/Choices" method="_on_choice_3_pressed"]

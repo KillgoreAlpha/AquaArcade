@@ -3,6 +3,9 @@ var eventID
 var eventDescription
 var eventChoice1
 var eventChoice2
+var consequences #this one is an array
+signal event_finished
+var possibleEvents
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
@@ -19,4 +22,9 @@ func _on_texture_button_1_pressed():
 
 func _on_texture_button_2_pressed():
 	pass # Replace with function body.
+
+
+
+func _on_end_turn_pressed():
+	possibleEvents = 
 
