@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://20eaviirngd3"]
+
+[ext_resource type="Script" path="res://event_manager.gd" id="1_gf626"]
+[ext_resource type="Texture2D" uid="uid://ba8cqciow8r8n" path="res://assets/sprites/window.png" id="2_yc555"]
+[ext_resource type="Theme" uid="uid://bvuglxq615n6e" path="res://text.tres" id="3_mpb8s"]
+
+[node name="Event_Manager" type="Node2D"]
+script = ExtResource("1_gf626")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yc555")
+
+[node name="Choice Window" type="VBoxContainer" parent="Sprite2D"]
+offset_left = -810.0
+offset_top = -390.0
+offset_right = 810.0
+offset_bottom = 390.0
+
+[node name="Description" type="RichTextLabel" parent="Sprite2D/Choice Window"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_mpb8s")
+text = "It’s the beginning of the water year, and with it comes the choice of optimization. A couple of Farmechs have pitched a couple of differing ideas for improving the Ampear harvest. One Farmech says that they need to expand the farmland since they’re reaching the maximum capacity on the number of crops that could be planted. The other insists that they must enter a fallow period, in which they don’t plant anything for a period to allow the soil a chance to recover. Thus, the choice is turned over to you as their superior."
+
+[node name="Option 1" type="Button" parent="Sprite2D/Choice Window"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_mpb8s")
+text = "Expand the Orchards"
+
+[node name="Option 2" type="Button" parent="Sprite2D/Choice Window"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_mpb8s")
+text = "Tallow the Fields"
+
+[node name="Result Window" type="VBoxContainer" parent="Sprite2D"]
+visible = false
+offset_left = -810.0
+offset_top = -390.0
+offset_right = 810.0
+offset_bottom = 390.0
+
+[node name="Description" type="RichTextLabel" parent="Sprite2D/Result Window"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_mpb8s")
+text = "The settlement prepares to enact the protocol for this year."
+
+[node name="Ok" type="Button" parent="Sprite2D/Result Window"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_mpb8s")
+text = "Ok"
+
+[connection signal="pressed" from="Sprite2D/Choice Window/Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Sprite2D/Choice Window/Option 2" to="." method="_on_option_2_pressed"]

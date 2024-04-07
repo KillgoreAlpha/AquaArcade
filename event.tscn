@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bong6vuj8mm7d"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fnaa1"]
-[ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://resource_template.tscn" id="2_trenu"]
+[ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://event_manager.tscn" id="2_trenu"]
 [ext_resource type="PackedScene" uid="uid://ccn33bgi1kcco" path="res://assets/models/world river.glb" id="3_sp2be"]
 [ext_resource type="Texture2D" uid="uid://bequx18jhwbq8" path="res://assets/icons/policy.aseprite" id="4_dfdm5"]
 [ext_resource type="Texture2D" uid="uid://cnyfyx6sohe1a" path="res://assets/icons/event.aseprite" id="5_16106"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://rxe5cdgh6cmq" path="res://assets/icons/eventcard.aseprite" id="16_mq63n"]
 [ext_resource type="Texture2D" uid="uid://md4cga14rla6" path="res://assets/icons/eventbutton.aseprite" id="17_skk7t"]
 [ext_resource type="PackedScene" uid="uid://b3bdwxvpmu30l" path="res://assets/sprites/robot.aseprite" id="18_0e7r0"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggkm3"]
 bg_color = Color(0, 0.631373, 0.976471, 1)
