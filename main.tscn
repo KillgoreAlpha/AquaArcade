@@ -44,10 +44,6 @@ light_color = Color(0.976471, 0.992157, 0.972549, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="MainMenu" type="TextureRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TopBar" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
@@ -410,6 +406,13 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = ExtResource("19_5ftf1")
+
+[node name="MainMenu" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="EndTurn" type="Button" parent="."]
 offset_left = 827.0
