@@ -1,6 +1,7 @@
-A WIP game created for the UC Merced Aqua Game Jam https://itch.io/jam/aquaarcade
+# H2Outpost
+### A WIP game created for the UC Merced Aqua Game Jam https://itch.io/jam/aquaarcade
 
-H2Outpost
+
 
 The Olmechas are a space-faring civilization consisting entirely of automatons. They’re currently exploring new solar systems to find some place to find home. To help expedite the process, instead of bringing their entire mothership to each potential planet, the Olmechas created the Pioneer Initiative, in which a small group of robot scouts are sent to live on the nominated locations for a trial period. The scout squadron is tasked with collecting metal from the planet for the creation of a beacon. If the pioneers manage to complete this goal, the Olmechas’ primary ship will arrive at the planet and settle there because the completion of the beacon proves that the land is sustainable.  
 
