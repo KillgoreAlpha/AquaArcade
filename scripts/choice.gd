@@ -6,7 +6,7 @@ func _ready():
 
 func _on_choice_1_pressed():
 	global.policy1 = true
-	global.metal -= 1
+	global.metalmod -= 1
 	global.botsmod += 1
 	global.policy_time = 3
 	queue_free()
@@ -14,7 +14,7 @@ func _on_choice_1_pressed():
 func _on_choice_2_pressed():
 	global.policy2 = true
 	global.prodmod += 1
-	global.pollutionmod += .1
+	global.pollutionmod += .05
 	global.policy_time = 3
 	queue_free()
 

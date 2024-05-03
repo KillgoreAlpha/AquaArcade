@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://brfkqg5dbsuq"]
+[gd_scene load_steps=24 format=3 uid="uid://brfkqg5dbsuq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_8spcv"]
+[ext_resource type="Texture2D" uid="uid://bu6x47ekjvvwf" path="res://assets/textures/HDR_blue_nebulae-1.hdr" id="3_lj4eu"]
 [ext_resource type="Texture2D" uid="uid://c62x7qj76t2v5" path="res://assets/icons/water.aseprite" id="4_22p4l"]
 [ext_resource type="PackedScene" uid="uid://ccn33bgi1kcco" path="res://assets/models/world river.glb" id="4_lrj47"]
 [ext_resource type="Theme" uid="uid://bvuglxq615n6e" path="res://text.tres" id="5_2826s"]
@@ -19,6 +20,16 @@
 [ext_resource type="Texture2D" uid="uid://cuak8ouf4cyde" path="res://assets/icons/nextturn.png" id="12_nksn0"]
 [ext_resource type="PackedScene" uid="uid://b3bdwxvpmu30l" path="res://assets/sprites/robot.aseprite" id="16_athk3"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gdlf"]
+panorama = ExtResource("3_lj4eu")
+
+[sub_resource type="Sky" id="Sky_pomne"]
+sky_material = SubResource("PanoramaSkyMaterial_8gdlf")
+
+[sub_resource type="Environment" id="Environment_2cior"]
+background_mode = 2
+sky = SubResource("Sky_pomne")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggkm3"]
 bg_color = Color(0, 0.631373, 0.976471, 1)
 
@@ -26,6 +37,9 @@ bg_color = Color(0, 0.631373, 0.976471, 1)
 script = ExtResource("1_8spcv")
 
 [node name="world river" parent="." instance=ExtResource("4_lrj47")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world river"]
+environment = SubResource("Environment_2cior")
 
 [node name="robot" parent="." instance=ExtResource("16_athk3")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.487064, 1.168, 0.763777)

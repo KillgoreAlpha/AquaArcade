@@ -70,10 +70,10 @@ func _on_option_1_pressed():
 	if eventID == 13:
 		global.metal -= 1000
 		global.beaconProgress += 1
-		if global.win_progress > 80:
+		if global.win_progress > 70:
 			global.win_progress += 99 - global.win_progress
 		else:
-			global.win_progress += 20
+			global.win_progress +=30
 	#if eventID == 14:
 		#global.
 	$"Sprite2D/Result Window/Description".text = chosenEvent[4]

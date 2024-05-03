@@ -29,16 +29,20 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_mpb8s")
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
 
 [node name="Option 1" type="Button" parent="Sprite2D/Choice Window"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_mpb8s")
+theme_override_font_sizes/font_size = 24
 
 [node name="Option 2" type="Button" parent="Sprite2D/Choice Window"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_mpb8s")
+theme_override_font_sizes/font_size = 24
 
 [node name="Result Window" type="VBoxContainer" parent="Sprite2D"]
 visible = false
@@ -51,11 +55,13 @@ offset_bottom = 390.0
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_mpb8s")
+theme_override_font_sizes/normal_font_size = 32
 
 [node name="Ok" type="Button" parent="Sprite2D/Result Window"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_mpb8s")
+theme_override_font_sizes/font_size = 32
 text = "Ok"
 
 [connection signal="pressed" from="Sprite2D/Choice Window/Option 1" to="." method="_on_option_1_pressed"]

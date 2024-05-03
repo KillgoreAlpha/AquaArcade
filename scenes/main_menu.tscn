@@ -48,12 +48,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 784.0
 offset_top = 835.0
 offset_right = 1091.0
 offset_bottom = 930.0
 
 [node name="Label" type="Label" parent="quit"]
+layout_mode = 0
 offset_right = 307.0
 offset_bottom = 96.0
 theme = ExtResource("2_km1lg")

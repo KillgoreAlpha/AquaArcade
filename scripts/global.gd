@@ -4,10 +4,9 @@ var water = 1.0
 var pollution = 0.0
 var water_quality = 1.0
 
-
 var mountain = 10000
 var snow = 0.5
-var metal = 0
+var metal = 5
 
 var ampears = 10
 var ampears_produced = 1
@@ -25,6 +24,8 @@ var synthesizerLevel = 0
 var policy_time = 0
 var win_progress = 0
 var difficulty = 100
+var win_game = false
+var lose_game = false
 
 # Win Condition Modifier
 var winmod = 0
@@ -77,16 +78,22 @@ var allEvents = {0: [0, "It’s the beginning of the water year, and with it com
 }
 
 func _process(delta):
-	if water < 0.0:
+	if win_progress >= 100:
+		win_progress = 100
+		win_game = true
+	if water <= 0.0:
 		water = 0.0
+		lose_game = true
 	if water > 1.0:
 		water = 1.0
 	if pollution < 0.0:
 		pollution = 0.0
-	if pollution > 1.0:
+	if pollution >= 1.0:
 		pollution = 1.0
-	if water_quality < 0.0:
+		lose_game = true
+	if water_quality <= 0.0:
 		water_quality = 0.0
+		lose_game = true
 	if water_quality > 1.0:
 		water_quality = 1.0
 	if metal < 0:

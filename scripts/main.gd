@@ -15,6 +15,10 @@ var event_scene = preload("res://scenes/event_manager.tscn")
 var choice_scene = preload("res://scenes/choice.tscn")
 
 func _process(delta):
+	if global.win_game == true:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	if global.lose_game == true:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	season = time % 4
 	year = time / 4
 	global.water_quality = ((global.water - (global.water * global.pollution)) / global.water) + global.waterqualmod
@@ -51,12 +55,11 @@ func _on_end_turn_pressed():
 		global.policy_time -= 1
 	else:
 		if global.policy1 == true:
-			global.metalmod += 1
+			global.metalmod += 2
 			global.botsmod -= 1
 			global.policy1 = false
 		if global.policy2 == true:
 			global.prodmod -= 1
-			global.pollutionmod -= .1
 			global.policy2 = false
 		if global.policy3 == true:
 			global.prodmod += 0.5

@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="AquaArcade"
+config/name="H2Outpost"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icons/water.aseprite"
 
 [aseprite_importers]
 
@@ -36,3 +36,7 @@ enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
 [filesystem]
 
 import/fbx/enabled=false
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
