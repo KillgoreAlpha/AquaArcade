@@ -2,8 +2,6 @@ extends Node2D
 
 var eventID
 var chosenEvent
-var consequences #this one is an array
-signal event_finished
 var possibleEvents: Array
 
 var allEvents = {0: [0, "It’s the beginning of the water year, and with it comes the choice of optimization. A couple of Farmechs have pitched a couple of differing ideas for improving the Ampear harvest. One Farmech says that they need to expand the farmland since they’re reaching the maximum capacity on the number of crops that could be planted. The other insists that they must enter a fallow period, in which they don’t plant anything for a period to allow the soil a chance to recover. Thus, the choice is turned over to you as their superior.", "Expand the Orchards", "Fallow the Soil","Placeholder","Placeholder"],
