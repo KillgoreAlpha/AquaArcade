@@ -47,13 +47,27 @@ func _process(delta):
 
 func _on_end_turn_pressed():
 	time += 1
+	if global.policy_time > 0:
+		global.policy_time -= 1
+	else:
+		if global.policy1 == true:
+			global.metalmod += 1
+			global.botsmod -= 1
+			global.policy1 = false
+		if global.policy2 == true:
+			global.prodmod -= 1
+			global.pollutionmod -= .1
+			global.policy2 = false
+		if global.policy3 == true:
+			global.prodmod += 0.5
+			global.policy2 = false
 	global.pollution += global.pollutionmod
 	global.ampear_groves += global.grovemod
 	global.bots += global.botsmod
 	global.water += global.watermod
 	global.mountain -= (global.bots * global.productivity) + global.mountainmod
 	global.metal += (global.bots * global.productivity) + global.metalmod
-	global.ampears_produced = (global.bots * global.productivity) * global.ampear_groves + global.ampearprodmod
+	global.ampears_produced = ((global.bots * global.productivity) * global.ampear_groves) + global.ampearprodmod
 	global.ampears +=  global.ampears_produced - global.bots + global.ampearmod
 	global.difficulty += global.windiffmod
 	global.win_progress += ((global.bots * global.productivity)/global.difficulty) + global.winmod

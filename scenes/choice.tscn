@@ -41,12 +41,13 @@ texture = ExtResource("16_b6k6f")
 
 [node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer/Card1/CardBackground1"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 246.0
-offset_right = 512.0
-offset_bottom = 700.0
+offset_right = 513.0
+offset_bottom = 47.0
 theme = ExtResource("8_u6t2e")
-text = "Test text"
+theme_override_font_sizes/font_size = 32
+text = "Increase Workforce"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Choice 1" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer/Card1"]
 layout_mode = 2
@@ -76,12 +77,14 @@ texture = ExtResource("16_b6k6f")
 
 [node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer2/Card2/CardBackground1"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 246.0
-offset_right = 512.0
-offset_bottom = 700.0
+offset_top = -1.0
+offset_right = 513.0
+offset_bottom = 48.0
 theme = ExtResource("8_u6t2e")
-text = "Test text"
+theme_override_font_sizes/font_size = 32
+text = "Increase Production"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Choice 2" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer2/Card2"]
 layout_mode = 2
@@ -113,11 +116,14 @@ texture = ExtResource("16_b6k6f")
 [node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer3/Card3/CardBackground1"]
 layout_mode = 2
 offset_left = -1.0
-offset_top = 246.0
+offset_top = -2.0
 offset_right = 512.0
-offset_bottom = 700.0
+offset_bottom = 49.0
 theme = ExtResource("8_u6t2e")
-text = "Test text"
+theme_override_font_sizes/font_size = 32
+text = "Let the Planet Rest"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Choice 3" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer3/Card3"]
 layout_mode = 2
