@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbrke5038fq0x"]
+
+[ext_resource type="Script" path="res://scripts/choice.gd" id="1_ovmr4"]
+[ext_resource type="Theme" uid="uid://dtj8wbgshg2m3" path="res://master_theme.tres" id="8_u6t2e"]
+[ext_resource type="Texture2D" uid="uid://bgx1p1wsf60pu" path="res://assets/icons/card.aseprite" id="16_b6k6f"]
+[ext_resource type="Texture2D" uid="uid://ddh468aclaaui" path="res://assets/icons/choosebutton.aseprite" id="17_qvds4"]
+
+[node name="choice" type="Node2D"]
+script = ExtResource("1_ovmr4")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 256.0
+offset_right = 1878.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card Select" type="VFlowContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 150
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Card Select"]
+layout_mode = 2
+
+[node name="Card1" type="HFlowContainer" parent="CenterContainer/Card Select/CenterContainer"]
+layout_mode = 2
+
+[node name="CardBackground1" type="TextureRect" parent="CenterContainer/Card Select/CenterContainer/Card1"]
+layout_mode = 2
+texture = ExtResource("16_b6k6f")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer/Card1/CardBackground1"]
+offset_left = -1.0
+offset_top = 246.0
+offset_right = 512.0
+offset_bottom = 700.0
+theme = ExtResource("8_u6t2e")
+text = "Test text"
+
+[node name="Choice 1" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer/Card1"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("8_u6t2e")
+texture_normal = ExtResource("17_qvds4")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer/Card1/Choice 1"]
+offset_right = 240.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/Card Select"]
+layout_mode = 2
+
+[node name="Card2" type="HFlowContainer" parent="CenterContainer/Card Select/CenterContainer2"]
+layout_mode = 2
+
+[node name="CardBackground1" type="TextureRect" parent="CenterContainer/Card Select/CenterContainer2/Card2"]
+layout_mode = 2
+texture = ExtResource("16_b6k6f")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer2/Card2/CardBackground1"]
+offset_left = -1.0
+offset_top = 246.0
+offset_right = 512.0
+offset_bottom = 700.0
+theme = ExtResource("8_u6t2e")
+text = "Test text"
+
+[node name="Choice 2" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer2/Card2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("8_u6t2e")
+texture_normal = ExtResource("17_qvds4")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer2/Card2/Choice 2"]
+offset_right = 240.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/Card Select"]
+layout_mode = 2
+theme = ExtResource("8_u6t2e")
+
+[node name="Card3" type="HFlowContainer" parent="CenterContainer/Card Select/CenterContainer3"]
+layout_mode = 2
+
+[node name="CardBackground1" type="TextureRect" parent="CenterContainer/Card Select/CenterContainer3/Card3"]
+layout_mode = 2
+texture = ExtResource("16_b6k6f")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer3/Card3/CardBackground1"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 246.0
+offset_right = 512.0
+offset_bottom = 700.0
+theme = ExtResource("8_u6t2e")
+text = "Test text"
+
+[node name="Choice 3" type="TextureButton" parent="CenterContainer/Card Select/CenterContainer3/Card3"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("8_u6t2e")
+texture_normal = ExtResource("17_qvds4")
+
+[node name="Label" type="Label" parent="CenterContainer/Card Select/CenterContainer3/Card3/Choice 3"]
+layout_mode = 2
+offset_right = 240.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/Card Select/CenterContainer/Card1/Choice 1" to="." method="_on_choice_1_pressed"]
+[connection signal="pressed" from="CenterContainer/Card Select/CenterContainer2/Card2/Choice 2" to="." method="_on_choice_2_pressed"]
+[connection signal="pressed" from="CenterContainer/Card Select/CenterContainer3/Card3/Choice 3" to="." method="_on_choice_3_pressed"]

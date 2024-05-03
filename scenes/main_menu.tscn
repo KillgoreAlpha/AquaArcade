@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://nukmns35ok0i"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ovpre"]
+[ext_resource type="Theme" uid="uid://dtj8wbgshg2m3" path="res://master_theme.tres" id="2_km1lg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a0s5p"]
+
+[node name="MainMenu" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ovpre")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_a0s5p")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 1919.0
+offset_bottom = 559.0
+theme = ExtResource("2_km1lg")
+theme_override_font_sizes/font_size = 256
+text = "H2Outpost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 662.0
+offset_right = 1178.0
+offset_bottom = 785.0
+
+[node name="Label" type="Label" parent="start"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 124.0
+theme = ExtResource("2_km1lg")
+theme_override_font_sizes/font_size = 64
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit" type="Button" parent="."]
+offset_left = 784.0
+offset_top = 835.0
+offset_right = 1091.0
+offset_bottom = 930.0
+
+[node name="Label" type="Label" parent="quit"]
+offset_right = 307.0
+offset_bottom = 96.0
+theme = ExtResource("2_km1lg")
+theme_override_font_sizes/font_size = 52
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

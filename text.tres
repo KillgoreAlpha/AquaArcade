@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bvuglxq615n6e"]
 
-[ext_resource type="FontFile" uid="uid://dq2af2i6fht1n" path="res://DiaryOfAn8BitMage-lYDD.ttf" id="1_t840g"]
+[ext_resource type="FontFile" uid="uid://dq2af2i6fht1n" path="res://assets/fonts/DiaryOfAn8BitMage-lYDD.ttf" id="1_t840g"]
+
 
 [resource]
 default_font = ExtResource("1_t840g")

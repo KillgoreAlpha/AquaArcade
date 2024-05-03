@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bong6vuj8mm7d"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_fnaa1"]
+[ext_resource type="PackedScene" uid="uid://20eaviirngd3" path="res://scenes/event_manager.tscn" id="2_trenu"]
+
+[node name="event" type="Node2D"]
+script = ExtResource("1_fnaa1")
+
+[node name="Resource Template" parent="." instance=ExtResource("2_trenu")]
+visible = false

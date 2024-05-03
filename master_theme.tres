@@ -1,12 +1,12 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtj8wbgshg2m3"]
 
-[ext_resource type="FontFile" uid="uid://dq2af2i6fht1n" path="res://DiaryOfAn8BitMage-lYDD.ttf" id="1_8kmtr"]
+[ext_resource type="FontFile" uid="uid://dq2af2i6fht1n" path="res://assets/fonts/DiaryOfAn8BitMage-lYDD.ttf" id="1_6aiw1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im36h"]
 bg_color = Color(0.796078, 0.796078, 0.796078, 1)
 
 [resource]
-default_font = ExtResource("1_8kmtr")
+default_font = ExtResource("1_6aiw1")
 default_font_size = 25
 Label/colors/font_color = Color(0.188235, 0.188235, 0.188235, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
@@ -17,5 +17,5 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_8kmtr")
+Label/fonts/font = ExtResource("1_6aiw1")
 Label/styles/normal = SubResource("StyleBoxFlat_im36h")
